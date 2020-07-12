@@ -123,7 +123,7 @@
         android:layout_width="70sp"
         android:layout_height="50sp"
         android:background="#D6D6D6"
-        android:onClick="button2"
+        android:onClick="button3"
         android:text="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
