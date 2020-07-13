@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.math.pow
 
 class MainActivity : AppCompatActivity() {
 
@@ -227,7 +228,9 @@ class MainActivity : AppCompatActivity() {
             mul = true
             text_display.text = ""
         } else if (hexadecimal) {
-
+            val1 = hexToDec(text_display.text as String)
+            mul = true
+            text_display.text = ""
         }
     }
 
@@ -294,8 +297,85 @@ class MainActivity : AppCompatActivity() {
 
     // Helper functions ---------------------------------------------------------------
 
+    /*private fun decToBin(x: String): String {
+
+    }*/
+
+    private fun binToDec(x: String): Float {
+        val arr = x.split("").subList(1,x.length+1)
+        val n = (arr.size - 1)
+        var number = 0.0f
+        for (i in n downTo 0) {
+            number += arr[n - i].toInt() * pow(2,i)
+        }
+        return number
+    }
+
+    /*private fun decToHex(x: String): String {
+
+    }*/
+
+    private fun hexToDec(x: String): Float {
+        val arr = x.split("").subList(1,x.length+1)
+        val n = (arr.size - 1)
+        var number = 0.0f
+        for (i in n downTo 0) {
+            number += when (arr[n - i]) {
+                "A" -> 10 * pow(16,i)
+                "B" -> 11 * pow(16,i)
+                "C" -> 12 * pow(16,i)
+                "D" -> 13 * pow(16,i)
+                "E" -> 14 * pow(16,i)
+                "F" -> 15 * pow(16,i)
+                else -> arr[n - i].toInt() * pow(16,i)
+            }
+        }
+        return number
+    }
+
     private fun clear() {
         text_display.text = ""
     }
 
+    /*fun binaryAddition(x: String, y: String) {
+
+    }
+
+    fun binarySubtraction(x: String, y: String) {
+
+    }
+
+    fun binaryMultiplication(x: String, y: String) {
+
+    }
+
+    fun binaryDivision(x: String, y: String) {
+
+    }
+
+    fun hexAddition(x: String, y: String) {
+
+    }
+
+    fun hexSubtraction(x: String, y: String) {
+
+    }
+
+    fun hexMultiplication(x: String, y: String) {
+
+    }
+
+    fun hexDivision(x: String, y: String) {
+
+    }*/
+
+    private fun pow(n: Int, x: Int): Int {
+        var a = 1
+        for (i in 1..x) {
+            a *= n
+        }
+        return a
+    }
+
 }
+
