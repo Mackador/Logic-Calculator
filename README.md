@@ -69,7 +69,7 @@ In order to verify the functionality of the logic calculator, here are some test
 
 *Test 5:*
 - Input any available number
-- Click the **2/10/16**
+- Click the **2/10/16** button
 - The numberical base textbox should display **HEX** and should terminate any ongoing operation in the **DEC** numberical base
 
 ## Demonstration
