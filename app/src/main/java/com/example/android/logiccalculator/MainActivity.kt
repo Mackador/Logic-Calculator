@@ -303,17 +303,17 @@ class MainActivity : AppCompatActivity() {
                         add = false
                     }
                     sub -> {
-                        val2 = text_display.text.toString().toInt()
+                        val2 = binToDec(text_display.text.toString())
                         text_display.text = decToBin(val1 - val2).reversed()
                         sub = false
                     }
                     mul -> {
-                        val2 = text_display.text.toString().toInt()
+                        val2 = binToDec(text_display.text.toString())
                         text_display.text = decToBin(val1 * val2).reversed()
                         mul = false
                     }
                     div -> {
-                        val2 = text_display.text.toString().toInt()
+                        val2 = binToDec(text_display.text.toString())
                         text_display.text = decToBin(val1 / val2).reversed()
                         div = false
                     }
@@ -394,6 +394,7 @@ class MainActivity : AppCompatActivity() {
             hexadecimal = false
             text_base.text = "DEC"
         }
+        clear()
     }
 
     // Helper functions ---------------------------------------------------------------
@@ -468,9 +469,13 @@ class MainActivity : AppCompatActivity() {
         return number
     }
 
-    // Clears the text on the calculator's display
+    // Clears the text on the calculator's display and terminates current operation
     private fun clear() {
         text_display.text = ""
+        add = false
+        sub = false
+        mul = false
+        div = false
     }
 
     // Raises the given n to the power of the given x
