@@ -1,5 +1,3 @@
-# Logic-Calculator
-
 ## Requirements
 
 ### User Cases
