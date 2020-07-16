@@ -35,7 +35,7 @@ In order to verify the functionality of the logic calculator, here are some test
 
 *Test 2:*
 - Click the **2/10/16** button in order to change the base
-- The numerical base text box should display **HEX**
+- The numerical base textbox should display **HEX**
 - Input the number **8AB**
 - Click the **-** button
 - Input the number **1BC**
@@ -45,11 +45,20 @@ In order to verify the functionality of the logic calculator, here are some test
 
 *Test 3:*
 - Click the **2/10/16** button in order to change the base
-- The numerical base text box should display **HEX**
+- The numerical base textbox should display **HEX**
 - Click the **2/10/16** button in order to change the base
-- The numerical base text box should display **BIN**
+- The numerical base textbox should display **BIN**
 - Input the number **1010**
 - Click the **x** button
 - Input the number **1100**
 - Click the **=** button
-- The result textbox should display **01111000**
+- The result textbox should display **1111000**
+
+*Test 4:*
+- Input the number **A**
+- The result textbox should display **Unavailable** due to A being a hexadecimal value and not a decimal one
+
+*Test 5:*
+- Input any available number
+- Click the **2/10/16**
+- The numberical base textbox should display **HEX** and should terminate any ongoing operation in the **DEC** numberical base
