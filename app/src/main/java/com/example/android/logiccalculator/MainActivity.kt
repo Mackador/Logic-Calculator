@@ -2,6 +2,7 @@ package com.example.android.logiccalculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -25,14 +26,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun button0() {
+    fun button0(v: View) {
         if (text_display.text != "" && !add && !sub && !mul && !div) {
             clear()
         }
         text_display.text = text_display.text.toString().plus("0")
     }
 
-    fun button1() {
+    fun button1(v: View) {
         if (text_display.text == "Unavailable" || calculated) {
             clear()
             calculated = false
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         text_display.text = text_display.text.toString().plus("1")
     }
 
-    fun button2() {
+    fun button2(v: View) {
         if (text_display.text == "Unavailable" || calculated) {
             clear()
             calculated = false
@@ -52,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun button3() {
+    fun button3(v: View) {
         if (text_display.text == "Unavailable" || calculated) {
             clear()
             calculated = false
@@ -64,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun button4() {
+    fun button4(v: View) {
         if (text_display.text == "Unavailable" || calculated) {
             clear()
             calculated = false
@@ -76,7 +77,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun button5() {
+    fun button5(v: View) {
         if (text_display.text == "Unavailable" || calculated) {
             clear()
             calculated = false
@@ -88,7 +89,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun button6() {
+    fun button6(v: View) {
         if (text_display.text == "Unavailable" || calculated) {
             clear()
             calculated = false
@@ -100,7 +101,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun button7() {
+    fun button7(v: View) {
         if (text_display.text == "Unavailable" || calculated) {
             clear()
             calculated = false
@@ -112,7 +113,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun button8() {
+    fun button8(v: View) {
         if (text_display.text == "Unavailable" || calculated) {
             clear()
             calculated = false
@@ -124,7 +125,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun button9() {
+    fun button9(v: View) {
         if (text_display.text == "Unavailable" || calculated) {
             clear()
             calculated = false
@@ -136,7 +137,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun buttonA() {
+    fun buttonA(v: View) {
         if (text_display.text == "Unavailable" || calculated) {
             clear()
             calculated = false
@@ -148,7 +149,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun buttonB() {
+    fun buttonB(v: View) {
         if (text_display.text == "Unavailable" || calculated) {
             clear()
             calculated = false
@@ -160,7 +161,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun buttonC() {
+    fun buttonC(v: View) {
         if (text_display.text == "Unavailable" || calculated) {
             clear()
             calculated = false
@@ -172,7 +173,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun buttonD() {
+    fun buttonD(v: View) {
         if (text_display.text == "Unavailable" || calculated) {
             clear()
             calculated = false
@@ -184,7 +185,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun buttonE() {
+    fun buttonE(v: View) {
         if (text_display.text == "Unavailable" || calculated) {
             clear()
             calculated = false
@@ -196,7 +197,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun buttonF() {
+    fun buttonF(v: View) {
         if (text_display.text == "Unavailable" || calculated) {
             clear()
             calculated = false
@@ -208,7 +209,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun add() {
+    fun add(v: View) {
         when {
             binary -> {
                 val1 = binToDec(text_display.text.toString())
@@ -228,7 +229,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun subtract() {
+    fun subtract(v: View) {
         when {
             binary -> {
                 val1 = binToDec(text_display.text.toString())
@@ -248,7 +249,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun multiply() {
+    fun multiply(v: View) {
         when {
             binary -> {
                 val1 = binToDec(text_display.text.toString())
@@ -268,7 +269,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun divide() {
+    fun divide(v: View) {
         when {
             binary -> {
                 val1 = binToDec(text_display.text.toString())
@@ -288,7 +289,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun equal() {
+    fun equal(v: View) {
         when {
             binary -> {
                 when {
@@ -366,11 +367,11 @@ class MainActivity : AppCompatActivity() {
         calculated = true
     }
 
-    fun cancel() {
+    fun cancel(v: View) {
         clear()
     }
 
-    fun change() {
+    fun change(v: View) {
         if (!binary && decimal && !hexadecimal) {
             binary = false
             decimal = false
