@@ -289,6 +289,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Calculates the given addition/subtraction/multiplication/division operation
     fun equal(v: View) {
         when {
             binary -> {
@@ -367,10 +368,12 @@ class MainActivity : AppCompatActivity() {
         calculated = true
     }
 
+    // Cancels the current operation and clears the display
     fun cancel(v: View) {
         clear()
     }
 
+    // Changes the base that the calculator is currently using
     fun change(v: View) {
         if (!binary && decimal && !hexadecimal) {
             binary = false
@@ -392,6 +395,7 @@ class MainActivity : AppCompatActivity() {
 
     // Helper functions ---------------------------------------------------------------
 
+    // Converts the given decimal number, n, into the binary base
     private fun decToBin(n: Int): String {
         if (n == 1) {
             return "1"
@@ -405,6 +409,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Converts the given binary number, x, into the decimal base
     private fun binToDec(x: String): Int {
         val arr = x.split("").subList(1,x.length+1)
         val n = (arr.size - 1)
@@ -415,6 +420,7 @@ class MainActivity : AppCompatActivity() {
         return number
     }
 
+    // Converts the given decimal number, n, into the hexadecimal base
     private fun decToHex(n: Int): String {
         if (n < 16) {
             return when (n) {
@@ -440,6 +446,7 @@ class MainActivity : AppCompatActivity() {
         return x.plus(decToHex(n/16))
     }
 
+    // Converts the given hexadecimal number, x, into the decimal base
     private fun hexToDec(x: String): Int {
         val arr = x.split("").subList(1,x.length+1)
         val n = (arr.size - 1)
@@ -458,10 +465,12 @@ class MainActivity : AppCompatActivity() {
         return number
     }
 
+    // Clears the text on the calculator's display
     private fun clear() {
         text_display.text = ""
     }
 
+    // Raises the given n to the power of the given x
     private fun pow(n: Int, x: Int): Int {
         var a = 1
         for (i in 1..x) {
