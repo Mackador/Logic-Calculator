@@ -9,19 +9,19 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    var binary = false
-    var decimal = true
-    var hexadecimal = false
+    private var binary = false
+    private var decimal = true
+    private var hexadecimal = false
 
-    var add = false
-    var sub = false
-    var mul = false
-    var div = false
+    private var add = false
+    private var sub = false
+    private var mul = false
+    private var div = false
 
-    var calculated = false
+    private var calculated = false
 
-    var val1 = 0
-    var val2 = 0
+    private var val1 = 0
+    private var val2 = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +29,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun button0(v: View) {
-        if (text_display.text != "" && !add && !sub && !mul && !div) {
+        if (text_display.text == "Unavailable" || calculated) {
             clear()
+            calculated = false
         }
         text_display.text = text_display.text.toString().plus("0")
     }
