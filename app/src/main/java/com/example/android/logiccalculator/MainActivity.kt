@@ -2,9 +2,7 @@ package com.example.android.logiccalculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlin.math.pow
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,31 +15,35 @@ class MainActivity : AppCompatActivity() {
     var mul = false
     var div = false
 
-    var val1 = 0.0f
-    var val2 = 0.0f
+    var calculated = false
+
+    var val1 = 0
+    var val2 = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
 
-    fun button0(v: View) {
+    fun button0() {
         if (text_display.text != "" && !add && !sub && !mul && !div) {
             clear()
         }
         text_display.text = text_display.text.toString().plus("0")
     }
 
-    fun button1(v: View) {
-        if (text_display.text != "" && !add && !sub && !mul && !div) {
+    fun button1() {
+        if (text_display.text == "Unavailable" || calculated) {
             clear()
+            calculated = false
         }
         text_display.text = text_display.text.toString().plus("1")
     }
 
-    fun button2(v: View) {
-        if (text_display.text != "" && !add && !sub && !mul && !div) {
+    fun button2() {
+        if (text_display.text == "Unavailable" || calculated) {
             clear()
+            calculated = false
         }
         if (binary) {
             text_display.text = "Unavailable"
@@ -50,9 +52,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun button3(v: View) {
-        if (text_display.text != "" && !add && !sub && !mul && !div) {
+    fun button3() {
+        if (text_display.text == "Unavailable" || calculated) {
             clear()
+            calculated = false
         }
         if (binary) {
             text_display.text = "Unavailable"
@@ -61,9 +64,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun button4(v: View) {
-        if (text_display.text != "" && !add && !sub && !mul && !div) {
+    fun button4() {
+        if (text_display.text == "Unavailable" || calculated) {
             clear()
+            calculated = false
         }
         if (binary) {
             text_display.text = "Unavailable"
@@ -72,9 +76,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun button5(v: View) {
-        if (text_display.text != "" && !add && !sub && !mul && !div) {
+    fun button5() {
+        if (text_display.text == "Unavailable" || calculated) {
             clear()
+            calculated = false
         }
         if (binary) {
             text_display.text = "Unavailable"
@@ -83,9 +88,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun button6(v: View) {
-        if (text_display.text != "" && !add && !sub && !mul && !div) {
+    fun button6() {
+        if (text_display.text == "Unavailable" || calculated) {
             clear()
+            calculated = false
         }
         if (binary) {
             text_display.text = "Unavailable"
@@ -94,9 +100,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun button7(v: View) {
-        if (text_display.text != "" && !add && !sub && !mul && !div) {
+    fun button7() {
+        if (text_display.text == "Unavailable" || calculated) {
             clear()
+            calculated = false
         }
         if (binary) {
             text_display.text = "Unavailable"
@@ -105,12 +112,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun button8(v: View) {
-        if (text_display.text != "" && !add && !sub && !mul && !div) {
+    fun button8() {
+        if (text_display.text == "Unavailable" || calculated) {
             clear()
-        }
-        if (text_display.text != "" && !add && !sub && !mul && !div) {
-            clear()
+            calculated = false
         }
         if (binary) {
             text_display.text = "Unavailable"
@@ -119,9 +124,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun button9(v: View) {
-        if (text_display.text != "" && !add && !sub && !mul && !div) {
+    fun button9() {
+        if (text_display.text == "Unavailable" || calculated) {
             clear()
+            calculated = false
         }
         if (binary) {
             text_display.text = "Unavailable"
@@ -130,9 +136,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun buttonA(v: View) {
-        if (text_display.text != "" && !add && !sub && !mul && !div) {
+    fun buttonA() {
+        if (text_display.text == "Unavailable" || calculated) {
             clear()
+            calculated = false
         }
         if (binary || decimal) {
             text_display.text = "Unavailable"
@@ -141,9 +148,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun buttonB(v: View) {
-        if (text_display.text != "" && !add && !sub && !mul && !div) {
+    fun buttonB() {
+        if (text_display.text == "Unavailable" || calculated) {
             clear()
+            calculated = false
         }
         if (binary || decimal) {
             text_display.text = "Unavailable"
@@ -152,9 +160,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun buttonC(v: View) {
-        if (text_display.text != "" && !add && !sub && !mul && !div) {
+    fun buttonC() {
+        if (text_display.text == "Unavailable" || calculated) {
             clear()
+            calculated = false
         }
         if (binary || decimal) {
             text_display.text = "Unavailable"
@@ -163,9 +172,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun buttonD(v: View) {
-        if (text_display.text != "" && !add && !sub && !mul && !div) {
+    fun buttonD() {
+        if (text_display.text == "Unavailable" || calculated) {
             clear()
+            calculated = false
         }
         if (binary || decimal) {
             text_display.text = "Unavailable"
@@ -174,9 +184,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun buttonE(v: View) {
-        if (text_display.text != "" && !add && !sub && !mul && !div) {
+    fun buttonE() {
+        if (text_display.text == "Unavailable" || calculated) {
             clear()
+            calculated = false
         }
         if (binary || decimal) {
             text_display.text = "Unavailable"
@@ -185,9 +196,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun buttonF(v: View) {
-        if (text_display.text != "" && !add && !sub && !mul && !div) {
+    fun buttonF() {
+        if (text_display.text == "Unavailable" || calculated) {
             clear()
+            calculated = false
         }
         if (binary || decimal) {
             text_display.text = "Unavailable"
@@ -196,87 +208,169 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun add(v: View) {
-        if (binary) {
-
-        } else if (decimal) {
-            val1 = text_display.text.toString().toFloat()
-            add = true
-            text_display.text = ""
-        } else if (hexadecimal) {
-
-        }
-    }
-
-    fun subtract(v: View) {
-        if (binary) {
-
-        } else if (decimal) {
-            val1 = text_display.text.toString().toFloat()
-            sub = true
-            text_display.text = ""
-        } else if (hexadecimal) {
-
-        }
-    }
-
-    fun multiply(v: View) {
-        if (binary) {
-
-        } else if (decimal) {
-            val1 = text_display.text.toString().toFloat()
-            mul = true
-            text_display.text = ""
-        } else if (hexadecimal) {
-            val1 = hexToDec(text_display.text as String)
-            mul = true
-            text_display.text = ""
-        }
-    }
-
-    fun divide(v: View) {
-        if (binary) {
-
-        } else if (decimal) {
-            val1 = text_display.text.toString().toFloat()
-            div = true
-            text_display.text = ""
-        } else if (hexadecimal) {
-
-        }
-    }
-
-    fun equal(v: View) {
-        if (binary) {
-
-        } else if (decimal) {
-            if (add) {
-                val2 = text_display.text.toString().toFloat()
-                text_display.text = (val1 + val2).toString()
-                add = false
-            } else if (sub) {
-                val2 = text_display.text.toString().toFloat()
-                text_display.text = (val1 - val2).toString()
-                sub = false
-            } else if (mul) {
-                val2 = text_display.text.toString().toFloat()
-                text_display.text = (val1 * val2).toString()
-                mul = false
-            } else if (div) {
-                val2 = text_display.text.toString().toFloat()
-                text_display.text = (val1 / val2).toString()
-                div = false
+    fun add() {
+        when {
+            binary -> {
+                val1 = binToDec(text_display.text.toString())
+                add = true
+                text_display.text = ""
             }
-        } else if (hexadecimal) {
-
+            decimal -> {
+                val1 = text_display.text.toString().toInt()
+                add = true
+                text_display.text = ""
+            }
+            hexadecimal -> {
+                val1 = hexToDec(text_display.text.toString())
+                add = true
+                text_display.text = ""
+            }
         }
     }
 
-    fun cancel(v: View) {
+    fun subtract() {
+        when {
+            binary -> {
+                val1 = binToDec(text_display.text.toString())
+                sub = true
+                text_display.text = ""
+            }
+            decimal -> {
+                val1 = text_display.text.toString().toInt()
+                sub = true
+                text_display.text = ""
+            }
+            hexadecimal -> {
+                val1 = hexToDec(text_display.text.toString())
+                sub = true
+                text_display.text = ""
+            }
+        }
+    }
+
+    fun multiply() {
+        when {
+            binary -> {
+                val1 = binToDec(text_display.text.toString())
+                mul = true
+                text_display.text = ""
+            }
+            decimal -> {
+                val1 = text_display.text.toString().toInt()
+                mul = true
+                text_display.text = ""
+            }
+            hexadecimal -> {
+                val1 = hexToDec(text_display.text.toString())
+                mul = true
+                text_display.text = ""
+            }
+        }
+    }
+
+    fun divide() {
+        when {
+            binary -> {
+                val1 = binToDec(text_display.text.toString())
+                div = true
+                text_display.text = ""
+            }
+            decimal -> {
+                val1 = text_display.text.toString().toInt()
+                div = true
+                text_display.text = ""
+            }
+            hexadecimal -> {
+                val1 = hexToDec(text_display.text.toString())
+                div = true
+                text_display.text = ""
+            }
+        }
+    }
+
+    fun equal() {
+        when {
+            binary -> {
+                when {
+                    add -> {
+                        val2 = binToDec(text_display.text.toString())
+                        text_display.text = decToBin(val1 + val2).reversed()
+                        add = false
+                    }
+                    sub -> {
+                        val2 = text_display.text.toString().toInt()
+                        text_display.text = decToBin(val1 - val2).reversed()
+                        sub = false
+                    }
+                    mul -> {
+                        val2 = text_display.text.toString().toInt()
+                        text_display.text = decToBin(val1 * val2).reversed()
+                        mul = false
+                    }
+                    div -> {
+                        val2 = text_display.text.toString().toInt()
+                        text_display.text = decToBin(val1 / val2).reversed()
+                        div = false
+                    }
+                }
+            }
+            decimal -> {
+                when {
+                    add -> {
+                        val2 = text_display.text.toString().toInt()
+                        text_display.text = (val1 + val2).toString()
+                        add = false
+                    }
+                    sub -> {
+                        val2 = text_display.text.toString().toInt()
+                        text_display.text = (val1 - val2).toString()
+                        sub = false
+                    }
+                    mul -> {
+                        val2 = text_display.text.toString().toInt()
+                        text_display.text = (val1 * val2).toString()
+                        mul = false
+                    }
+                    div -> {
+                        val2 = text_display.text.toString().toInt()
+                        text_display.text = (val1 / val2).toString()
+                        div = false
+                    }
+                }
+            }
+            hexadecimal -> {
+                when {
+                    add -> {
+                        val2 = hexToDec(text_display.text.toString())
+                        text_display.text = decToHex(val1 + val2).reversed()
+                        add = false
+                    }
+                    sub -> {
+                        val2 = hexToDec(text_display.text.toString())
+                        text_display.text = decToHex(val1 - val2).reversed()
+                        sub = false
+                    }
+                    mul -> {
+                        val2 = hexToDec(text_display.text.toString())
+                        text_display.text = decToHex(val1 * val2).reversed()
+                        mul = false
+                    }
+                    div -> {
+                        val2 = hexToDec(text_display.text.toString())
+                        text_display.text = decToHex(val1 / val2).reversed()
+                        div = false
+                    }
+                }
+            }
+        }
+        calculated = true
+    }
+
+    fun cancel() {
         clear()
     }
 
-    fun change(v: View) {
+    fun change() {
         if (!binary && decimal && !hexadecimal) {
             binary = false
             decimal = false
@@ -297,28 +391,58 @@ class MainActivity : AppCompatActivity() {
 
     // Helper functions ---------------------------------------------------------------
 
-    /*private fun decToBin(x: String): String {
+    private fun decToBin(n: Int): String {
+        if (n == 1) {
+            return "1"
+        }
+        return if (n % 2 == 1) {
+            val temp = n/2
+            "1".plus(decToBin(temp))
+        } else {
+            val temp = n/2
+            "0".plus(decToBin(temp))
+        }
+    }
 
-    }*/
-
-    private fun binToDec(x: String): Float {
+    private fun binToDec(x: String): Int {
         val arr = x.split("").subList(1,x.length+1)
         val n = (arr.size - 1)
-        var number = 0.0f
+        var number = 0
         for (i in n downTo 0) {
             number += arr[n - i].toInt() * pow(2,i)
         }
         return number
     }
 
-    /*private fun decToHex(x: String): String {
+    private fun decToHex(n: Int): String {
+        if (n < 16) {
+            return when (n) {
+                10 -> "A"
+                11 -> "B"
+                12 -> "C"
+                13 -> "D"
+                14 -> "E"
+                15 -> "F"
+                else -> n.toString()
+            }
+        }
+        var x = ((n.toDouble()/16 - n/16) * 16).toInt().toString()
+        x = when (x) {
+            "10" -> "A"
+            "11" -> "B"
+            "12" -> "C"
+            "13" -> "D"
+            "14" -> "E"
+            "15" -> "F"
+            else -> x
+        }
+        return x.plus(decToHex(n/16))
+    }
 
-    }*/
-
-    private fun hexToDec(x: String): Float {
+    private fun hexToDec(x: String): Int {
         val arr = x.split("").subList(1,x.length+1)
         val n = (arr.size - 1)
-        var number = 0.0f
+        var number = 0
         for (i in n downTo 0) {
             number += when (arr[n - i]) {
                 "A" -> 10 * pow(16,i)
@@ -336,38 +460,6 @@ class MainActivity : AppCompatActivity() {
     private fun clear() {
         text_display.text = ""
     }
-
-    /*fun binaryAddition(x: String, y: String) {
-
-    }
-
-    fun binarySubtraction(x: String, y: String) {
-
-    }
-
-    fun binaryMultiplication(x: String, y: String) {
-
-    }
-
-    fun binaryDivision(x: String, y: String) {
-
-    }
-
-    fun hexAddition(x: String, y: String) {
-
-    }
-
-    fun hexSubtraction(x: String, y: String) {
-
-    }
-
-    fun hexMultiplication(x: String, y: String) {
-
-    }
-
-    fun hexDivision(x: String, y: String) {
-
-    }*/
 
     private fun pow(n: Int, x: Int): Int {
         var a = 1
