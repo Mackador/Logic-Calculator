@@ -1,3 +1,5 @@
+// Program written and created by Mackador Warfa
+
 package com.example.android.logiccalculator
 
 import androidx.appcompat.app.AppCompatActivity
