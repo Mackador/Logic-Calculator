@@ -22,6 +22,10 @@
 
 This state machine describes the functionality of the logic calculator. It shows all possible interactions at any given stage of the application. If there are any changes to be made in the application, this state machine must also be edited in order to reflect them.
 
+## Demonstration
+![Logic Calculator Demonstration Video](https://youtu.be/_FVRUa9NsnQ)
+
+
 ## Tests
 
 In order to verify the functionality of the logic calculator, here are some tests you may attempt to complete using it.
