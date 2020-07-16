@@ -18,6 +18,6 @@
 | Indicates that the numerical base should rotate to the next possible option | Displays current numerical base |
 
 ## Architecture
-![State Machine](https://cdn.discordapp.com/attachments/357577039445884950/733372433117216828/unknown.png)
+![State Machine](https://cdn.discordapp.com/attachments/357577039445884950/733373526043656303/unknown.png)
 
 This state machine describes the functionality of the logic calculator. It shows all possible interactions at any given stage of the application. If there are any changes to be made in the application, this state machine must also be edited in order to reflect them.
