@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
+import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
 
@@ -213,82 +214,98 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun add(v: View) {
-        when {
-            binary -> {
-                val1 = binToDec(text_display.text.toString())
-                add = true
-                text_display.text = ""
+        try {
+            when {
+                binary -> {
+                    val1 = binToDec(text_display.text.toString())
+                    add = true
+                    text_display.text = ""
+                }
+                decimal -> {
+                    val1 = text_display.text.toString().toInt()
+                    add = true
+                    text_display.text = ""
+                }
+                hexadecimal -> {
+                    val1 = hexToDec(text_display.text.toString())
+                    add = true
+                    text_display.text = ""
+                }
             }
-            decimal -> {
-                val1 = text_display.text.toString().toInt()
-                add = true
-                text_display.text = ""
-            }
-            hexadecimal -> {
-                val1 = hexToDec(text_display.text.toString())
-                add = true
-                text_display.text = ""
-            }
+        } catch (e: Exception) {
+            text_display.text = "Unavailable"
         }
     }
 
     fun subtract(v: View) {
-        when {
-            binary -> {
-                val1 = binToDec(text_display.text.toString())
-                sub = true
-                text_display.text = ""
+        try {
+            when {
+                binary -> {
+                    val1 = binToDec(text_display.text.toString())
+                    sub = true
+                    text_display.text = ""
+                }
+                decimal -> {
+                    val1 = text_display.text.toString().toInt()
+                    sub = true
+                    text_display.text = ""
+                }
+                hexadecimal -> {
+                    val1 = hexToDec(text_display.text.toString())
+                    sub = true
+                    text_display.text = ""
+                }
             }
-            decimal -> {
-                val1 = text_display.text.toString().toInt()
-                sub = true
-                text_display.text = ""
-            }
-            hexadecimal -> {
-                val1 = hexToDec(text_display.text.toString())
-                sub = true
-                text_display.text = ""
-            }
+        } catch (e: Exception) {
+            text_display.text = "Unavailable"
         }
     }
 
     fun multiply(v: View) {
-        when {
-            binary -> {
-                val1 = binToDec(text_display.text.toString())
-                mul = true
-                text_display.text = ""
+        try {
+            when {
+                binary -> {
+                    val1 = binToDec(text_display.text.toString())
+                    mul = true
+                    text_display.text = ""
+                }
+                decimal -> {
+                    val1 = text_display.text.toString().toInt()
+                    mul = true
+                    text_display.text = ""
+                }
+                hexadecimal -> {
+                    val1 = hexToDec(text_display.text.toString())
+                    mul = true
+                    text_display.text = ""
+                }
             }
-            decimal -> {
-                val1 = text_display.text.toString().toInt()
-                mul = true
-                text_display.text = ""
-            }
-            hexadecimal -> {
-                val1 = hexToDec(text_display.text.toString())
-                mul = true
-                text_display.text = ""
-            }
+        } catch (e: Exception) {
+            text_display.text = "Unavailable"
         }
     }
 
     fun divide(v: View) {
-        when {
-            binary -> {
-                val1 = binToDec(text_display.text.toString())
-                div = true
-                text_display.text = ""
+        try {
+            when {
+                binary -> {
+                    val1 = binToDec(text_display.text.toString())
+                    div = true
+                    text_display.text = ""
+                }
+                decimal -> {
+                    val1 = text_display.text.toString().toInt()
+                    div = true
+                    text_display.text = ""
+                }
+                hexadecimal -> {
+                    val1 = hexToDec(text_display.text.toString())
+                    div = true
+                    text_display.text = ""
+                }
             }
-            decimal -> {
-                val1 = text_display.text.toString().toInt()
-                div = true
-                text_display.text = ""
-            }
-            hexadecimal -> {
-                val1 = hexToDec(text_display.text.toString())
-                div = true
-                text_display.text = ""
-            }
+        } catch (e: Exception) {
+            text_display.text = "Unavailable"
         }
     }
 
