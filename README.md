@@ -73,4 +73,4 @@ In order to verify the functionality of the logic calculator, here are some test
 - The numberical base textbox should display **HEX** and should terminate any ongoing operation in the **DEC** numberical base
 
 ## Demonstration
-![Logic Calculator Demonstration Video](https://youtu.be/_FVRUa9NsnQ)
+Logic Calculator Demonstration Video: https://youtu.be/_FVRUa9NsnQ
